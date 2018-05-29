@@ -1,0 +1,39 @@
+apply plugin: "java"
+
+description = 'jackson-core'
+
+dependencies {
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+	maven { url "http://repo.maven.apache.org/maven2" }
+}
+sourceSets {
+	main {
+		java {
+			srcDirs = ['src/main/java', 'target/generated-sources/com/fasterxml/jackson/core/json'] // change this to point to where your src code lives
+		}
+	}
+}
+
+
+task translateJava(type:Exec) {
+	inputs.files sourceSets.main.allJava
+	outputs.files files((sourceSets.main.allJava).collect { i ->
+		i.collect { j ->
+			def name = projectDir.path + 'src/main/gen/objc/' + i.name
+			return [name.replace('.java', '.h'), name.replace('.java', '.m')]
+		}
+	}.flatten())
+
+	executable "${J2OBJC_HOME_LATEST}/j2objc"
+	args '--doc-comments'
+	args '--nullability'
+//    args '--strip-reflection' // Uncomment this line if the library does not use reflection, search the source for '.reflect'
+	args '-d', file('src/main/gen/objc').path
+	args '-sourcepath', (sourceSets.main.allJava.srcDirs).join(':')
+	args '-classpath', sourceSets.main.runtimeClasspath.collect { it.absolutePath }.join(':')
+	args inputs.files
+}
