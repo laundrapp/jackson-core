@@ -1,0 +1,52 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.fasterxml.jackson.core'
+version = '2.9.3'
+
+description = """Jackson-core"""
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+configurations.all {
+}
+
+repositories {
+        
+     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java'] // change this to point to where your src code lives
+        }
+    }
+}
+
+task translateJava(type:Exec) {
+    inputs.files sourceSets.main.allJava
+    outputs.files files((sourceSets.main.allJava).collect { i ->
+        i.collect { j ->
+            def name = projectDir.path + 'src/main/gen/objc/' + i.name
+            return [name.replace('.java', '.h'), name.replace('.java', '.m')]
+        }
+    }.flatten())
+
+    executable "${J2OBJC_HOME_LATEST}/j2objc"
+    args '--doc-comments'
+    args '--nullability'
+//    args '--strip-reflection' // Uncomment this line if the library does not use reflection, search the source for '.reflect'
+    args '-d', file('src/main/gen/objc').path
+    args '-sourcepath', (sourceSets.main.allJava.srcDirs).join(':')
+    args '-classpath', sourceSets.main.runtimeClasspath.collect { it.absolutePath }.join(':')
+    args inputs.files
+}
