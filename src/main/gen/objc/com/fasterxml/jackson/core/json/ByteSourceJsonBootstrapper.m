@@ -6,9 +6,9 @@
 #include "IOSPrimitiveArray.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/core/JsonEncoding.h"
+#include "com/fasterxml/jackson/core/JsonFactory.h"
 #include "com/fasterxml/jackson/core/JsonParser.h"
 #include "com/fasterxml/jackson/core/ObjectCodec.h"
-#include "com/fasterxml/jackson/core/TokenStreamFactory.h"
 #include "com/fasterxml/jackson/core/format/InputAccessor.h"
 #include "com/fasterxml/jackson/core/format/MatchStrength.h"
 #include "com/fasterxml/jackson/core/io/IOContext.h"
@@ -184,7 +184,7 @@ __attribute__((unused)) static void ComFasterxmlJacksonCoreJsonByteSourceJsonBoo
                                                       withInt:(jint)factoryFeatures {
   ComFasterxmlJacksonCoreJsonEncoding *enc = [self detectEncoding];
   if (enc == JreLoadEnum(ComFasterxmlJacksonCoreJsonEncoding, UTF8)) {
-    if ([((ComFasterxmlJacksonCoreTokenStreamFactory_Feature *) nil_chk(JreLoadEnum(ComFasterxmlJacksonCoreTokenStreamFactory_Feature, CANONICALIZE_FIELD_NAMES))) enabledInWithInt:factoryFeatures]) {
+    if ([((ComFasterxmlJacksonCoreJsonFactory_Feature *) nil_chk(JreLoadEnum(ComFasterxmlJacksonCoreJsonFactory_Feature, CANONICALIZE_FIELD_NAMES))) enabledInWithInt:factoryFeatures]) {
       ComFasterxmlJacksonCoreSymByteQuadsCanonicalizer *can = [((ComFasterxmlJacksonCoreSymByteQuadsCanonicalizer *) nil_chk(rootByteSymbols)) makeChildWithInt:factoryFeatures];
       return create_ComFasterxmlJacksonCoreJsonUTF8StreamJsonParser_initWithComFasterxmlJacksonCoreIoIOContext_withInt_withJavaIoInputStream_withComFasterxmlJacksonCoreObjectCodec_withComFasterxmlJacksonCoreSymByteQuadsCanonicalizer_withByteArray_withInt_withInt_withBoolean_(_context_, parserFeatures, _in_, codec, can, _inputBuffer_, _inputPtr_, _inputEnd_, _bufferRecyclable_);
     }
