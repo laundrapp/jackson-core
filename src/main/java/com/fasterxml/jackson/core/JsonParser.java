@@ -882,12 +882,6 @@ public abstract class JsonParser
     public abstract JsonToken currentToken();
 
     /**
-     * @deprecated Since 3.0 use {@link #currentToken} instead.
-     */
-    @Deprecated
-    public JsonToken getCurrentToken() { return currentToken(); }
-
-    /**
      * Method similar to {@link #currentToken()} but that returns an
      * <code>int</code> instead of {@link JsonToken} (enum value).
      *<p>
@@ -1036,12 +1030,6 @@ public abstract class JsonParser
      * @since 3.0
      */
     public abstract String currentName() throws IOException;
-
-    /**
-     * @deprecated Since 3.0 use {@link #currentName} instead
-     */
-    @Deprecated
-    public String getCurrentName() throws IOException { return currentName(); }
 
     /**
      * Method for accessing textual representation of the current token;

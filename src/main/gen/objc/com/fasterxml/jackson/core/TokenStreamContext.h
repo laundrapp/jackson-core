@@ -67,10 +67,6 @@
 - (jint)getCurrentIndex;
 
 /*!
- */
-- (NSString *)getCurrentName;
-
-/*!
  @brief Method for accessing currently active value being used by data-binding
   (as the source of streaming data to write, or destination of data being
   read), at this level in hierarchy.

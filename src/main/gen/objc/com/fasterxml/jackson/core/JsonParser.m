@@ -27,11 +27,9 @@
 #include "java/io/OutputStream.h"
 #include "java/io/Writer.h"
 #include "java/lang/Boolean.h"
-#include "java/lang/Deprecated.h"
 #include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
 #include "java/lang/UnsupportedOperationException.h"
-#include "java/lang/annotation/Annotation.h"
 #include "java/math/BigDecimal.h"
 #include "java/math/BigInteger.h"
 
@@ -50,10 +48,6 @@ J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonCoreJsonParser, MIN_SHORT_I, jin
 inline jint ComFasterxmlJacksonCoreJsonParser_get_MAX_SHORT_I(void);
 #define ComFasterxmlJacksonCoreJsonParser_MAX_SHORT_I 32767
 J2OBJC_STATIC_FIELD_CONSTANT(ComFasterxmlJacksonCoreJsonParser, MAX_SHORT_I, jint)
-
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonCoreJsonParser__Annotations$0(void);
-
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonCoreJsonParser__Annotations$1(void);
 
 __attribute__((unused)) static void ComFasterxmlJacksonCoreJsonParser_NumberType_initWithNSString_withInt_(ComFasterxmlJacksonCoreJsonParser_NumberType *self, NSString *__name, jint __ordinal);
 
@@ -292,10 +286,6 @@ J2OBJC_IGNORE_DESIGNATED_END
   return 0;
 }
 
-- (ComFasterxmlJacksonCoreJsonToken *)getCurrentToken {
-  return [self currentToken];
-}
-
 - (jint)currentTokenId {
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
@@ -352,10 +342,6 @@ J2OBJC_IGNORE_DESIGNATED_END
   // can't call an abstract method
   [self doesNotRecognizeSelector:_cmd];
   return 0;
-}
-
-- (NSString *)getCurrentName {
-  return [self currentName];
 }
 
 - (NSString *)getText {
@@ -631,21 +617,19 @@ J2OBJC_IGNORE_DESIGNATED_END
     { NULL, "J", 0x1, 26, 27, 11, -1, -1, -1 },
     { NULL, "LJavaLangBoolean;", 0x1, -1, -1, 11, -1, -1, -1 },
     { NULL, "LComFasterxmlJacksonCoreJsonToken;", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComFasterxmlJacksonCoreJsonToken;", 0x1, -1, -1, -1, -1, 28, -1 },
     { NULL, "I", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "Z", 0x401, 29, 0, -1, -1, -1, -1 },
-    { NULL, "Z", 0x401, 30, 31, -1, -1, -1, -1 },
+    { NULL, "Z", 0x401, 28, 0, -1, -1, -1, -1 },
+    { NULL, "Z", 0x401, 29, 30, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, 11, -1, -1, -1 },
     { NULL, "V", 0x401, -1, -1, -1, -1, -1, -1 },
     { NULL, "LComFasterxmlJacksonCoreJsonToken;", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x401, 32, 6, -1, -1, -1, -1 },
+    { NULL, "V", 0x401, 31, 6, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, 11, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, -1, -1, 11, -1, 33, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, 11, -1, -1, -1 },
-    { NULL, "I", 0x1, 34, 14, 35, -1, -1, -1 },
+    { NULL, "I", 0x1, 32, 14, 33, -1, -1, -1 },
     { NULL, "[C", 0x401, -1, -1, 11, -1, -1, -1 },
     { NULL, "I", 0x401, -1, -1, 11, -1, -1, -1 },
     { NULL, "I", 0x401, -1, -1, 11, -1, -1, -1 },
@@ -662,29 +646,29 @@ J2OBJC_IGNORE_DESIGNATED_END
     { NULL, "LJavaMathBigDecimal;", 0x401, -1, -1, 11, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, 11, -1, -1, -1 },
     { NULL, "LNSObject;", 0x1, -1, -1, 11, -1, -1, -1 },
-    { NULL, "[B", 0x401, 36, 37, 11, -1, -1, -1 },
+    { NULL, "[B", 0x401, 34, 35, 11, -1, -1, -1 },
     { NULL, "[B", 0x1, -1, -1, 11, -1, -1, -1 },
-    { NULL, "I", 0x1, 38, 13, 11, -1, -1, -1 },
-    { NULL, "I", 0x1, 38, 39, 11, -1, -1, -1 },
+    { NULL, "I", 0x1, 36, 13, 11, -1, -1, -1 },
+    { NULL, "I", 0x1, 36, 37, 11, -1, -1, -1 },
     { NULL, "I", 0x1, -1, -1, 11, -1, -1, -1 },
-    { NULL, "I", 0x1, 40, 0, 11, -1, -1, -1 },
+    { NULL, "I", 0x1, 38, 0, 11, -1, -1, -1 },
     { NULL, "J", 0x1, -1, -1, 11, -1, -1, -1 },
-    { NULL, "J", 0x1, 41, 27, 11, -1, -1, -1 },
+    { NULL, "J", 0x1, 39, 27, 11, -1, -1, -1 },
     { NULL, "D", 0x1, -1, -1, 11, -1, -1, -1 },
-    { NULL, "D", 0x1, 42, 43, 11, -1, -1, -1 },
+    { NULL, "D", 0x1, 40, 41, 11, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, 11, -1, -1, -1 },
-    { NULL, "Z", 0x1, 44, 45, 11, -1, -1, -1 },
+    { NULL, "Z", 0x1, 42, 43, 11, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, 11, -1, -1, -1 },
-    { NULL, "LNSString;", 0x401, 46, 6, 11, -1, -1, -1 },
+    { NULL, "LNSString;", 0x401, 44, 6, 11, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSObject;", 0x1, -1, -1, 11, -1, -1, -1 },
     { NULL, "LNSObject;", 0x1, -1, -1, 11, -1, -1, -1 },
-    { NULL, "LNSObject;", 0x401, 47, 48, 11, 49, -1, -1 },
-    { NULL, "LNSObject;", 0x401, 47, 50, 11, 51, -1, -1 },
-    { NULL, "LNSObject;", 0x401, 47, 52, 11, 53, -1, -1 },
-    { NULL, "LComFasterxmlJacksonCoreTreeNode;", 0x401, -1, -1, 11, 54, -1, -1 },
-    { NULL, "LComFasterxmlJacksonCoreJsonParseException;", 0x4, 55, 6, -1, -1, -1, -1 },
+    { NULL, "LNSObject;", 0x401, 45, 46, 11, 47, -1, -1 },
+    { NULL, "LNSObject;", 0x401, 45, 48, 11, 49, -1, -1 },
+    { NULL, "LNSObject;", 0x401, 45, 50, 11, 51, -1, -1 },
+    { NULL, "LComFasterxmlJacksonCoreTreeNode;", 0x401, -1, -1, 11, 52, -1, -1 },
+    { NULL, "LComFasterxmlJacksonCoreJsonParseException;", 0x4, 53, 6, -1, -1, -1, -1 },
     { NULL, "V", 0x4, -1, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
@@ -732,61 +716,59 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[39].selector = @selector(nextLongValueWithLong:);
   methods[40].selector = @selector(nextBooleanValue);
   methods[41].selector = @selector(currentToken);
-  methods[42].selector = @selector(getCurrentToken);
-  methods[43].selector = @selector(currentTokenId);
-  methods[44].selector = @selector(hasCurrentToken);
-  methods[45].selector = @selector(hasTokenIdWithInt:);
-  methods[46].selector = @selector(hasTokenWithComFasterxmlJacksonCoreJsonToken:);
-  methods[47].selector = @selector(isExpectedStartArrayToken);
-  methods[48].selector = @selector(isExpectedStartObjectToken);
-  methods[49].selector = @selector(isNaN);
-  methods[50].selector = @selector(clearCurrentToken);
-  methods[51].selector = @selector(getLastClearedToken);
-  methods[52].selector = @selector(overrideCurrentNameWithNSString:);
-  methods[53].selector = @selector(currentName);
-  methods[54].selector = @selector(getCurrentName);
-  methods[55].selector = @selector(getText);
-  methods[56].selector = @selector(getTextWithJavaIoWriter:);
-  methods[57].selector = @selector(getTextCharacters);
-  methods[58].selector = @selector(getTextLength);
-  methods[59].selector = @selector(getTextOffset);
-  methods[60].selector = @selector(hasTextCharacters);
-  methods[61].selector = @selector(getNumberValue);
-  methods[62].selector = @selector(getNumberType);
-  methods[63].selector = @selector(getByteValue);
-  methods[64].selector = @selector(getShortValue);
-  methods[65].selector = @selector(getIntValue);
-  methods[66].selector = @selector(getLongValue);
-  methods[67].selector = @selector(getBigIntegerValue);
-  methods[68].selector = @selector(getFloatValue);
-  methods[69].selector = @selector(getDoubleValue);
-  methods[70].selector = @selector(getDecimalValue);
-  methods[71].selector = @selector(getBooleanValue);
-  methods[72].selector = @selector(getEmbeddedObject);
-  methods[73].selector = @selector(getBinaryValueWithComFasterxmlJacksonCoreBase64Variant:);
-  methods[74].selector = @selector(getBinaryValue);
-  methods[75].selector = @selector(readBinaryValueWithJavaIoOutputStream:);
-  methods[76].selector = @selector(readBinaryValueWithComFasterxmlJacksonCoreBase64Variant:withJavaIoOutputStream:);
-  methods[77].selector = @selector(getValueAsInt);
-  methods[78].selector = @selector(getValueAsIntWithInt:);
-  methods[79].selector = @selector(getValueAsLong);
-  methods[80].selector = @selector(getValueAsLongWithLong:);
-  methods[81].selector = @selector(getValueAsDouble);
-  methods[82].selector = @selector(getValueAsDoubleWithDouble:);
-  methods[83].selector = @selector(getValueAsBoolean);
-  methods[84].selector = @selector(getValueAsBooleanWithBoolean:);
-  methods[85].selector = @selector(getValueAsString);
-  methods[86].selector = @selector(getValueAsStringWithNSString:);
-  methods[87].selector = @selector(canReadObjectId);
-  methods[88].selector = @selector(canReadTypeId);
-  methods[89].selector = @selector(getObjectId);
-  methods[90].selector = @selector(getTypeId);
-  methods[91].selector = @selector(readValueAsWithIOSClass:);
-  methods[92].selector = @selector(readValueAsWithComFasterxmlJacksonCoreTypeTypeReference:);
-  methods[93].selector = @selector(readValueAsWithComFasterxmlJacksonCoreTypeResolvedType:);
-  methods[94].selector = @selector(readValueAsTree);
-  methods[95].selector = @selector(_constructErrorWithNSString:);
-  methods[96].selector = @selector(_reportUnsupportedOperation);
+  methods[42].selector = @selector(currentTokenId);
+  methods[43].selector = @selector(hasCurrentToken);
+  methods[44].selector = @selector(hasTokenIdWithInt:);
+  methods[45].selector = @selector(hasTokenWithComFasterxmlJacksonCoreJsonToken:);
+  methods[46].selector = @selector(isExpectedStartArrayToken);
+  methods[47].selector = @selector(isExpectedStartObjectToken);
+  methods[48].selector = @selector(isNaN);
+  methods[49].selector = @selector(clearCurrentToken);
+  methods[50].selector = @selector(getLastClearedToken);
+  methods[51].selector = @selector(overrideCurrentNameWithNSString:);
+  methods[52].selector = @selector(currentName);
+  methods[53].selector = @selector(getText);
+  methods[54].selector = @selector(getTextWithJavaIoWriter:);
+  methods[55].selector = @selector(getTextCharacters);
+  methods[56].selector = @selector(getTextLength);
+  methods[57].selector = @selector(getTextOffset);
+  methods[58].selector = @selector(hasTextCharacters);
+  methods[59].selector = @selector(getNumberValue);
+  methods[60].selector = @selector(getNumberType);
+  methods[61].selector = @selector(getByteValue);
+  methods[62].selector = @selector(getShortValue);
+  methods[63].selector = @selector(getIntValue);
+  methods[64].selector = @selector(getLongValue);
+  methods[65].selector = @selector(getBigIntegerValue);
+  methods[66].selector = @selector(getFloatValue);
+  methods[67].selector = @selector(getDoubleValue);
+  methods[68].selector = @selector(getDecimalValue);
+  methods[69].selector = @selector(getBooleanValue);
+  methods[70].selector = @selector(getEmbeddedObject);
+  methods[71].selector = @selector(getBinaryValueWithComFasterxmlJacksonCoreBase64Variant:);
+  methods[72].selector = @selector(getBinaryValue);
+  methods[73].selector = @selector(readBinaryValueWithJavaIoOutputStream:);
+  methods[74].selector = @selector(readBinaryValueWithComFasterxmlJacksonCoreBase64Variant:withJavaIoOutputStream:);
+  methods[75].selector = @selector(getValueAsInt);
+  methods[76].selector = @selector(getValueAsIntWithInt:);
+  methods[77].selector = @selector(getValueAsLong);
+  methods[78].selector = @selector(getValueAsLongWithLong:);
+  methods[79].selector = @selector(getValueAsDouble);
+  methods[80].selector = @selector(getValueAsDoubleWithDouble:);
+  methods[81].selector = @selector(getValueAsBoolean);
+  methods[82].selector = @selector(getValueAsBooleanWithBoolean:);
+  methods[83].selector = @selector(getValueAsString);
+  methods[84].selector = @selector(getValueAsStringWithNSString:);
+  methods[85].selector = @selector(canReadObjectId);
+  methods[86].selector = @selector(canReadTypeId);
+  methods[87].selector = @selector(getObjectId);
+  methods[88].selector = @selector(getTypeId);
+  methods[89].selector = @selector(readValueAsWithIOSClass:);
+  methods[90].selector = @selector(readValueAsWithComFasterxmlJacksonCoreTypeTypeReference:);
+  methods[91].selector = @selector(readValueAsWithComFasterxmlJacksonCoreTypeResolvedType:);
+  methods[92].selector = @selector(readValueAsTree);
+  methods[93].selector = @selector(_constructErrorWithNSString:);
+  methods[94].selector = @selector(_reportUnsupportedOperation);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "MIN_BYTE_I", "I", .constantValue.asInt = ComFasterxmlJacksonCoreJsonParser_MIN_BYTE_I, 0x1a, -1, -1, -1, -1 },
@@ -796,8 +778,8 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "_features_", "I", .constantValue.asLong = 0, 0x4, -1, -1, -1, -1 },
     { "_requestPayload_", "LComFasterxmlJacksonCoreUtilRequestPayload;", .constantValue.asLong = 0, 0x84, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "I", "setCurrentValue", "LNSObject;", "setRequestPayloadOnError", "LComFasterxmlJacksonCoreUtilRequestPayload;", "[BLNSString;", "LNSString;", "setSchema", "LComFasterxmlJacksonCoreFormatSchema;", "canUseSchema", "version", "LJavaIoIOException;", "releaseBuffered", "LJavaIoOutputStream;", "LJavaIoWriter;", "enable", "LComFasterxmlJacksonCoreJsonParser_Feature;", "disable", "configure", "LComFasterxmlJacksonCoreJsonParser_Feature;Z", "isEnabled", "nextFieldName", "LComFasterxmlJacksonCoreSerializableString;", "LComFasterxmlJacksonCoreSymFieldNameMatcher;", "currentFieldName", "nextIntValue", "nextLongValue", "J", (void *)&ComFasterxmlJacksonCoreJsonParser__Annotations$0, "hasTokenId", "hasToken", "LComFasterxmlJacksonCoreJsonToken;", "overrideCurrentName", (void *)&ComFasterxmlJacksonCoreJsonParser__Annotations$1, "getText", "LJavaIoIOException;LJavaLangUnsupportedOperationException;", "getBinaryValue", "LComFasterxmlJacksonCoreBase64Variant;", "readBinaryValue", "LComFasterxmlJacksonCoreBase64Variant;LJavaIoOutputStream;", "getValueAsInt", "getValueAsLong", "getValueAsDouble", "D", "getValueAsBoolean", "Z", "getValueAsString", "readValueAs", "LIOSClass;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)TT;", "LComFasterxmlJacksonCoreTypeTypeReference;", "<T:Ljava/lang/Object;>(Lcom/fasterxml/jackson/core/type/TypeReference<*>;)TT;", "LComFasterxmlJacksonCoreTypeResolvedType;", "<T:Ljava/lang/Object;>(Lcom/fasterxml/jackson/core/type/ResolvedType;)TT;", "<T::Lcom/fasterxml/jackson/core/TreeNode;>()TT;", "_constructError", "LComFasterxmlJacksonCoreJsonParser_NumberType;LComFasterxmlJacksonCoreJsonParser_Feature;" };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonCoreJsonParser = { "JsonParser", "com.fasterxml.jackson.core", ptrTable, methods, fields, 7, 0x401, 97, 6, -1, 56, -1, -1, -1 };
+  static const void *ptrTable[] = { "I", "setCurrentValue", "LNSObject;", "setRequestPayloadOnError", "LComFasterxmlJacksonCoreUtilRequestPayload;", "[BLNSString;", "LNSString;", "setSchema", "LComFasterxmlJacksonCoreFormatSchema;", "canUseSchema", "version", "LJavaIoIOException;", "releaseBuffered", "LJavaIoOutputStream;", "LJavaIoWriter;", "enable", "LComFasterxmlJacksonCoreJsonParser_Feature;", "disable", "configure", "LComFasterxmlJacksonCoreJsonParser_Feature;Z", "isEnabled", "nextFieldName", "LComFasterxmlJacksonCoreSerializableString;", "LComFasterxmlJacksonCoreSymFieldNameMatcher;", "currentFieldName", "nextIntValue", "nextLongValue", "J", "hasTokenId", "hasToken", "LComFasterxmlJacksonCoreJsonToken;", "overrideCurrentName", "getText", "LJavaIoIOException;LJavaLangUnsupportedOperationException;", "getBinaryValue", "LComFasterxmlJacksonCoreBase64Variant;", "readBinaryValue", "LComFasterxmlJacksonCoreBase64Variant;LJavaIoOutputStream;", "getValueAsInt", "getValueAsLong", "getValueAsDouble", "D", "getValueAsBoolean", "Z", "getValueAsString", "readValueAs", "LIOSClass;", "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)TT;", "LComFasterxmlJacksonCoreTypeTypeReference;", "<T:Ljava/lang/Object;>(Lcom/fasterxml/jackson/core/type/TypeReference<*>;)TT;", "LComFasterxmlJacksonCoreTypeResolvedType;", "<T:Ljava/lang/Object;>(Lcom/fasterxml/jackson/core/type/ResolvedType;)TT;", "<T::Lcom/fasterxml/jackson/core/TreeNode;>()TT;", "_constructError", "LComFasterxmlJacksonCoreJsonParser_NumberType;LComFasterxmlJacksonCoreJsonParser_Feature;" };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonCoreJsonParser = { "JsonParser", "com.fasterxml.jackson.core", ptrTable, methods, fields, 7, 0x401, 95, 6, -1, 54, -1, -1, -1 };
   return &_ComFasterxmlJacksonCoreJsonParser;
 }
 
@@ -810,14 +792,6 @@ void ComFasterxmlJacksonCoreJsonParser_init(ComFasterxmlJacksonCoreJsonParser *s
 void ComFasterxmlJacksonCoreJsonParser_initWithInt_(ComFasterxmlJacksonCoreJsonParser *self, jint features) {
   NSObject_init(self);
   self->_features_ = features;
-}
-
-IOSObjectArray *ComFasterxmlJacksonCoreJsonParser__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
-}
-
-IOSObjectArray *ComFasterxmlJacksonCoreJsonParser__Annotations$1() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonCoreJsonParser)

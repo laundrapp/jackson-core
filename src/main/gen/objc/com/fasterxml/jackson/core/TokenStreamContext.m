@@ -3,20 +3,14 @@
 //  source: /Users/Salton/Documents/Projects/jackson-core/src/main/java/com/fasterxml/jackson/core/TokenStreamContext.java
 //
 
-#include "IOSClass.h"
-#include "IOSObjectArray.h"
 #include "J2ObjC_source.h"
 #include "com/fasterxml/jackson/core/JsonLocation.h"
 #include "com/fasterxml/jackson/core/JsonPointer.h"
 #include "com/fasterxml/jackson/core/TokenStreamContext.h"
 #include "com/fasterxml/jackson/core/io/CharTypes.h"
-#include "java/lang/Deprecated.h"
 #include "java/lang/StringBuilder.h"
-#include "java/lang/annotation/Annotation.h"
 
 __attribute__((unused)) static jint ComFasterxmlJacksonCoreTokenStreamContext_getCurrentIndex(ComFasterxmlJacksonCoreTokenStreamContext *self);
-
-__attribute__((unused)) static IOSObjectArray *ComFasterxmlJacksonCoreTokenStreamContext__Annotations$0(void);
 
 @implementation ComFasterxmlJacksonCoreTokenStreamContext
 
@@ -96,10 +90,6 @@ J2OBJC_IGNORE_DESIGNATED_END
   return 0;
 }
 
-- (NSString *)getCurrentName {
-  return [self currentName];
-}
-
 - (jboolean)hasCurrentName {
   return [self currentName] != nil;
 }
@@ -170,14 +160,13 @@ J2OBJC_IGNORE_DESIGNATED_END
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x401, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, 2, -1 },
     { NULL, "Z", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSObject;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "V", 0x1, 3, 4, -1, -1, -1, -1 },
+    { NULL, "V", 0x1, 2, 3, -1, -1, -1, -1 },
     { NULL, "LComFasterxmlJacksonCoreJsonPointer;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComFasterxmlJacksonCoreJsonPointer;", 0x1, 5, 6, -1, -1, -1, -1 },
-    { NULL, "LComFasterxmlJacksonCoreJsonLocation;", 0x1, 7, 4, -1, -1, -1, -1 },
-    { NULL, "LNSString;", 0x1, 8, -1, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonCoreJsonPointer;", 0x1, 4, 5, -1, -1, -1, -1 },
+    { NULL, "LComFasterxmlJacksonCoreJsonLocation;", 0x1, 6, 3, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, 7, -1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -195,14 +184,13 @@ J2OBJC_IGNORE_DESIGNATED_END
   methods[10].selector = @selector(hasCurrentIndex);
   methods[11].selector = @selector(hasPathSegment);
   methods[12].selector = @selector(currentName);
-  methods[13].selector = @selector(getCurrentName);
-  methods[14].selector = @selector(hasCurrentName);
-  methods[15].selector = @selector(getCurrentValue);
-  methods[16].selector = @selector(setCurrentValueWithId:);
-  methods[17].selector = @selector(pathAsPointer);
-  methods[18].selector = @selector(pathAsPointerWithBoolean:);
-  methods[19].selector = @selector(getStartLocationWithId:);
-  methods[20].selector = @selector(description);
+  methods[13].selector = @selector(hasCurrentName);
+  methods[14].selector = @selector(getCurrentValue);
+  methods[15].selector = @selector(setCurrentValueWithId:);
+  methods[16].selector = @selector(pathAsPointer);
+  methods[17].selector = @selector(pathAsPointerWithBoolean:);
+  methods[18].selector = @selector(getStartLocationWithId:);
+  methods[19].selector = @selector(description);
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "TYPE_ROOT", "I", .constantValue.asInt = ComFasterxmlJacksonCoreTokenStreamContext_TYPE_ROOT, 0x1c, -1, -1, -1, -1 },
@@ -211,8 +199,8 @@ J2OBJC_IGNORE_DESIGNATED_END
     { "_type_", "I", .constantValue.asLong = 0, 0x4, -1, -1, -1, -1 },
     { "_index_", "I", .constantValue.asLong = 0, 0x4, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "LComFasterxmlJacksonCoreTokenStreamContext;", "II", (void *)&ComFasterxmlJacksonCoreTokenStreamContext__Annotations$0, "setCurrentValue", "LNSObject;", "pathAsPointer", "Z", "getStartLocation", "toString" };
-  static const J2ObjcClassInfo _ComFasterxmlJacksonCoreTokenStreamContext = { "TokenStreamContext", "com.fasterxml.jackson.core", ptrTable, methods, fields, 7, 0x401, 21, 5, -1, -1, -1, -1, -1 };
+  static const void *ptrTable[] = { "LComFasterxmlJacksonCoreTokenStreamContext;", "II", "setCurrentValue", "LNSObject;", "pathAsPointer", "Z", "getStartLocation", "toString" };
+  static const J2ObjcClassInfo _ComFasterxmlJacksonCoreTokenStreamContext = { "TokenStreamContext", "com.fasterxml.jackson.core", ptrTable, methods, fields, 7, 0x401, 20, 5, -1, -1, -1, -1, -1 };
   return &_ComFasterxmlJacksonCoreTokenStreamContext;
 }
 
@@ -236,10 +224,6 @@ void ComFasterxmlJacksonCoreTokenStreamContext_initWithInt_withInt_(ComFasterxml
 
 jint ComFasterxmlJacksonCoreTokenStreamContext_getCurrentIndex(ComFasterxmlJacksonCoreTokenStreamContext *self) {
   return (self->_index_ < 0) ? 0 : self->_index_;
-}
-
-IOSObjectArray *ComFasterxmlJacksonCoreTokenStreamContext__Annotations$0() {
-  return [IOSObjectArray arrayWithObjects:(id[]){ create_JavaLangDeprecated() } count:1 type:JavaLangAnnotationAnnotation_class_()];
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComFasterxmlJacksonCoreTokenStreamContext)

@@ -311,14 +311,6 @@
 - (ComFasterxmlJacksonCoreJsonLocation *)getCurrentLocation;
 
 /*!
- */
-- (NSString *)getCurrentName;
-
-/*!
- */
-- (ComFasterxmlJacksonCoreJsonToken *)getCurrentToken;
-
-/*!
  @brief Helper method, usually equivalent to:
  <code>
     getParsingContext().getCurrentValue();

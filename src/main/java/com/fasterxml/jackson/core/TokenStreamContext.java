@@ -150,12 +150,6 @@ public abstract class TokenStreamContext
      */
     public abstract String currentName();
 
-    /**
-     * @deprecated Since 3.0 use {@link #currentName} instead
-     */
-    @Deprecated
-    public String getCurrentName() { return currentName(); }
-    
     public boolean hasCurrentName() { return currentName() != null; }
 
     /**
